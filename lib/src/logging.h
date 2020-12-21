@@ -114,15 +114,17 @@ static inline bool neo4j_log_is_enabled(neo4j_logger_t *logger,
  * @param [format] The printf-style format for the log message.
  * @param [ap] A vector of arguments to the format.
  */
-static inline void neo4j_vlog(neo4j_logger_t *logger, uint_fast8_t level,
-        const char *format, va_list ap)
-{
-    if (logger == NULL)
-    {
-        return;
-    }
-    logger->log(logger, level, format, ap);
-}
+void neo4j_vlog(neo4j_logger_t *logger, uint_fast8_t level,
+                const char *format, va_list ap);
+//static inline void neo4j_vlog(neo4j_logger_t *logger, uint_fast8_t level,
+//                              const char *format, va_list ap)
+//{
+//    if (logger == NULL)
+//    {
+//        return;
+//    }
+//    logger->log(logger, level, format, ap);
+//}
 
 /**
  * Write an entry to a logger.
